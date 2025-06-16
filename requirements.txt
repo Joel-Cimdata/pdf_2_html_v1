@@ -1,0 +1,5 @@
+PyMuPDF==1.23.14
+beautifulsoup4==4.12.2
+Pillow==10.2.0
+lxml==4.9.3
+html5lib==1.1
