@@ -30,8 +30,8 @@ USAGE
    bash convert.sh
 
 3. Output files will be created:
-   - HTML file: index/index.html
-   - Images: images/ folder
+   - HTML file: output/index/index.html
+   - Images: output/images/ folder
    - Additional output: output/ folder (with style subfolder)
 
 PROJECT STRUCTURE
@@ -42,10 +42,13 @@ pdf_2_html_v1/
 │   ├── convert.sh              # Main conversion script
 │   └── extract_pdf_to_html.py  # Python extraction script
 ├── pdf_file_here/              # Place PDF files here
-├── index/                      # HTML output folder (created by script)
-├── images/                     # Extracted images folder (created by script)
 ├── output/                     # Additional output folder (created by script)
+│   ├── index/                  # HTML output folder (created by script)
+│   │   └── index.html
+│   ├── images/                 # Extracted images folder (created by script)
+│   │   └── (extracted images)
 │   └── style/                  # CSS and styling files (created by script)
+│       └── (CSS files)
 ├── venv/                       # Virtual environment (create during setup)
 ├── requirements.txt            # Python dependencies
 └── README.txt                  # This file

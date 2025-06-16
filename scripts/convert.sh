@@ -8,23 +8,32 @@ if [ -z "$PDF_FILE" ]; then
   exit 1
 fi
 
-OUTPUT_HTML="../index/index.html"
-IMAGES_DIR="../images"
-INDEX_DIR="../index"
+# All output goes inside the output folder
 OUTPUT_DIR="../output"
+INDEX_DIR="../output/index"
+IMAGES_DIR="../output/images"
 STYLE_DIR="../output/style"
+OUTPUT_HTML="../output/index/index.html"
 
-# Create all necessary directories
-mkdir -p "$IMAGES_DIR"
-mkdir -p "$INDEX_DIR"
-mkdir -p "$OUTPUT_DIR"
-mkdir -p "$STYLE_DIR"
+# Create all necessary directories inside output folder
+echo "📁 Creating directories inside output folder..."
+mkdir -p "$OUTPUT_DIR" && echo "  ✓ Created: $OUTPUT_DIR"
+mkdir -p "$INDEX_DIR" && echo "  ✓ Created: $INDEX_DIR"
+mkdir -p "$IMAGES_DIR" && echo "  ✓ Created: $IMAGES_DIR"
+mkdir -p "$STYLE_DIR" && echo "  ✓ Created: $STYLE_DIR"
 
 cd "$(dirname "$0")"
 
+echo "🔄 Starting PDF conversion..."
 (
 source ../venv/bin/activate
 python3 extract_pdf_to_html.py "$PDF_FILE" "$OUTPUT_HTML" "$IMAGES_DIR"
 )
 
-echo "✅ Conversion complete: $OUTPUT_HTML"
+if [ $? -eq 0 ]; then
+  echo "✅ Conversion complete: $OUTPUT_HTML"
+  echo "📂 All output is in: $OUTPUT_DIR"
+else
+  echo "❌ Conversion failed"
+  exit 1
+fi

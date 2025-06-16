@@ -15,7 +15,7 @@ images_folder = sys.argv[3]
 # Open PDF
 doc = fitz.open(pdf_path)
 
-# Prepare HTML structure
+# Prepare HTML structure (CSS path updated since index and style are both in output folder)
 html = BeautifulSoup("""
 <!DOCTYPE html>
 <html lang="de">
