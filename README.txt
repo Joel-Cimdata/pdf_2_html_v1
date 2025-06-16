@@ -42,13 +42,16 @@ pdf_2_html_v1/
 │   ├── convert.sh              # Main conversion script
 │   └── extract_pdf_to_html.py  # Python extraction script
 ├── pdf_file_here/              # Place PDF files here
-├── index/                      # HTML output folder
-├── images/                     # Extracted images folder
-├── output/                     # Additional output folder
-│   └── style/                  # CSS and styling files
-├── venv/                       # Virtual environment
+├── index/                      # HTML output folder (created by script)
+├── images/                     # Extracted images folder (created by script)
+├── output/                     # Additional output folder (created by script)
+│   └── style/                  # CSS and styling files (created by script)
+├── venv/                       # Virtual environment (create during setup)
 ├── requirements.txt            # Python dependencies
 └── README.txt                  # This file
+
+Note: Folders marked as "(created by script)" and "(create during setup)" 
+will not exist in the repository and are generated when needed.
 
 REQUIREMENTS
 ------------
